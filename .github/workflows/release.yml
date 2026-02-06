@@ -33,11 +33,11 @@ jobs:
           file: 'VERSION'
 
       - name: Install dependencies
-        run: yarn install --immutable && yarn cache clean
+        run: bun install --immutable && bun pm cache rm
         working-directory: ./web
 
       - name: Build
-        run: yarn openapi && yarn build
+        run: bun openapi && bun build
         working-directory: ./web
 
       - name: Upload files
